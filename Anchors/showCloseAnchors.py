@@ -55,7 +55,7 @@ for anchor_name, anchor_coords in anchors_grouping.items():
 
     if strings:
         string = anchor_name + '\n' + '\n'.join(strings)
-        Glyphs.currentDocument.windowController().addTabWithString_(string)
+        Glyphs.font.newTab(string)
 
 # for coordi, this_coord in enumerate(coordinates):
 # 	try:
@@ -69,6 +69,6 @@ for anchor_name, anchor_coords in anchors_grouping.items():
 
 # for anchor_name, glyph_name_strings in strings.items():
 # 	string = anchor_name + '\n' + ''.join(glyph_name_strings)
-# 	Glyphs.currentDocument.windowController().addTabWithString_(string)
+# 	Glyphs.font.newTab(string)
 
 Glyphs.font.enableUpdateInterface()
