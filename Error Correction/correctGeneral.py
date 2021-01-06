@@ -69,10 +69,8 @@ class generalFix():
                             break
 
         if affected_layers:
-            if not Glyphs.font.tabs:
-                Glyphs.font.newTab()
-
-            Glyphs.font.tabs[0].layers = affected_layers
+            Glyphs.font.newTab()
+            Glyphs.font.tabs[-1].layers = affected_layers
             Glyphs.showNotification('Quadratic Curves Found', 'There were Quadratic Curves found in some layers. They have been opened in a new tab.')
             print('Quadratic Curves Found', 'There were Quadratic Curves found in some layers. They have been opened in a new tab.')
 

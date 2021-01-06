@@ -55,10 +55,8 @@ for x in eff_layers.values():
     layers += x
 
 if layers:
-    if not Glyphs.font.tabs:
-        Glyphs.font.newTab()
-
-    Glyphs.font.tabs[0].layers = layers
+    Glyphs.font.newTab()
+    Glyphs.font.tabs[-1].layers = layers
 else:
     Glyphs.showNotification('Non-Extreme Nodes', 'All good. All glyphs have nodes at the extremes.')
 

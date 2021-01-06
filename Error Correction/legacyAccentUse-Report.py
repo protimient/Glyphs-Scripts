@@ -32,10 +32,8 @@ for g in Glyphs.font.glyphs:
                 affected_layers.append(l)
 
 if affected_layers:
-    if not Glyphs.font.tabs:
-        Glyphs.font.newTab()
-
-    Glyphs.font.tabs[0].layers = affected_layers
+    Glyphs.font.newTab()
+    Glyphs.font.tabs[-1].layers = affected_layers
 else:
     Glyphs.showNotification('Legacy Accents', 'All good. No legacy accents are being used.')
     print('Legacy Accents', 'All good. No legacy accents are being used.')

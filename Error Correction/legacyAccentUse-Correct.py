@@ -73,10 +73,8 @@ for g in [x for x in Glyphs.font.glyphs if x.unicode not in all_accent_glyphs]:
                 raise
 
 if affected_layers:
-    if not Glyphs.font.tabs:
-        Glyphs.font.newTab()
-
-    Glyphs.font.tabs[0].layers = affected_layers
+    Glyphs.font.newTab()
+    Glyphs.font.tabs[-1].layers = affected_layers
 else:
     Glyphs.showNotification('Legacy Accents', 'All good. No legacy accents are being used.')
     print('Legacy Accents', 'All good. No legacy accents are being used.')

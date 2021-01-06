@@ -20,10 +20,8 @@ def report():
 
     print(effected_glyphs)
     if effected_glyphs:
-        if not Glyphs.font.tabs:
-            Glyphs.font.newTab()
-
-        Glyphs.font.tabs[0].layers = effected_glyphs
+        Glyphs.font.newTab()
+        Glyphs.font.tabs[-1].layers = effected_glyphs
 
 
 report()
