@@ -1,4 +1,9 @@
 # MenuTitle: Set Kerning Groups for Selected
+# -*- coding: utf-8 -*-
+__doc__ = """
+Sets the left and/or right kerning group to the predefined key.
+"""
+
 # Glyphs.clearLog()
 # Glyphs.showMacroWindow()
 
