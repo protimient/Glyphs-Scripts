@@ -6,7 +6,7 @@ E.g. A.sc -> A (A -> A.sc)
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 for g in [x.parent for x in Glyphs.font.selectedLayers]:
     gn = str(g.name)

@@ -5,7 +5,6 @@ Converts the outline in the current layer to a python list.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
 
 
 def make_python(l):
@@ -25,3 +24,5 @@ def make_python(l):
 
 l = Glyphs.font.selectedLayers[0]
 make_python(l)
+
+Glyphs.showMacroWindow()

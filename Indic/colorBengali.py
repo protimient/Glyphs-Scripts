@@ -5,7 +5,7 @@ Colours the Bengali glyphs according to their category.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 vowel_names = [
     "a-beng",

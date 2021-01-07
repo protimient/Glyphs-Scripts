@@ -9,7 +9,7 @@ script = ''
 
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 thisFont = Glyphs.font  # frontmost font
 

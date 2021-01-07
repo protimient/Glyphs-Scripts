@@ -5,7 +5,7 @@ Removes all Postscript hints that are not attached to a node.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 # for g in Glyphs.font.glyphs:
 if 1:

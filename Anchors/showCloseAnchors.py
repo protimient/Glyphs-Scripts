@@ -6,7 +6,7 @@ Checks every glyph in the font and shows them if their anchors are closely place
 
 from collections import defaultdict
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 selectedMaster = Glyphs.currentDocument.selectedFontMaster()
 

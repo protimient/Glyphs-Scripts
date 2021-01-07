@@ -16,7 +16,7 @@ from vanilla import (
 )
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 class makePlist(object):

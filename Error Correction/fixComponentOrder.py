@@ -30,4 +30,4 @@ for g in these_glyphs:
 
 Glyphs.font.enableUpdateInterface()
 
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()

@@ -5,7 +5,7 @@ Fixes glyphs that are using the old, legacy accents instead of combining marks.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 unicodes = {
     '00B4': '0301', 	# acute

@@ -5,7 +5,7 @@ righttoleftembedding, popdirectionalformatting, lefttorightoverride, righttoleft
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 class makeGlyphs():

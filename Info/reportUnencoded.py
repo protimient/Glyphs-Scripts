@@ -4,7 +4,7 @@ __doc__ = """
 Colours red and opens a tab with any unencoded glyph not used as a component or included in an Opentype feature.
 """
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 def get_removable_glyphs():

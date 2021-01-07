@@ -5,7 +5,6 @@ Prints the glyph names of the selected glyphs and any glyphs used as components.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
 
 
 def get_component_components(l):
@@ -27,3 +26,5 @@ for g in [l.parent for l in Glyphs.font.selectedLayers]:
         names |= set([x.name for x in get_component_components(l)])
 
 print('\n'.join(names))
+
+Glyphs.showMacroWindow()

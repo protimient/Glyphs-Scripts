@@ -7,7 +7,7 @@ Compares the outline with the background/mask in the selected glyphs and opens a
 from collections import defaultdict
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 def make_node_to_tuple(n):

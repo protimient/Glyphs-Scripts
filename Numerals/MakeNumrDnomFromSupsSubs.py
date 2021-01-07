@@ -4,7 +4,7 @@ __doc__ = """
 Adds numerator and denominator glyphs as components of superior and inferior numerals.
 """
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 Glyphs.font.disableUpdateInterface()
 

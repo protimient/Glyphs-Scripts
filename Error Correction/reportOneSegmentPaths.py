@@ -28,4 +28,4 @@ report()
 print('Done')
 
 
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()

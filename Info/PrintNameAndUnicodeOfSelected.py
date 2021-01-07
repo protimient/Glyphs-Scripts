@@ -5,7 +5,6 @@ Prints the name and unicode of selected glyphs as a python list.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
 
 print('unicodes = [')
 for g in [x.parent for x in Glyphs.font.selectedLayers]:
@@ -18,3 +17,5 @@ for g in [x.parent for x in Glyphs.font.selectedLayers]:
         gunicode=g.unicode,
     ))
 print(']')
+
+Glyphs.showMacroWindow()

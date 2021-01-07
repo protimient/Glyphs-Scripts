@@ -5,7 +5,6 @@ Reports the number of nodes in each layer for each selected glyph.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
 
 
 for g in [x.parent for x in Glyphs.font.selectedLayers]:
@@ -20,3 +19,5 @@ for g in [x.parent for x in Glyphs.font.selectedLayers]:
         ))
     if len(set(all_nodes)) == 1:
         print('*** All identical ***')
+
+Glyphs.showMacroWindow()

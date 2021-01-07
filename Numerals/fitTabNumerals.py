@@ -9,7 +9,7 @@ Values are calculated per master.
 from collections import defaultdict
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 linPropSuffix = ''
 linTabSuffix = '.tf'

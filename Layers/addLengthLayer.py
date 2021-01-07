@@ -5,7 +5,7 @@ Adds a layer named length to each master and adds the parameter to the smart gly
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 g = Glyphs.font.selectedLayers[0].parent
 

@@ -8,7 +8,7 @@ import re
 from collections import defaultdict
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 affected_glyphs = [g for g in Glyphs.font.glyphs if re.match(r'^iMatra-beng\.\d', g.name)]
 

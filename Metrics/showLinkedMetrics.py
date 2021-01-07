@@ -5,7 +5,7 @@ Opens a tab listing glyphs in the selection with MetricsKeys.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 strings = []
 

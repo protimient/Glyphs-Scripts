@@ -6,7 +6,7 @@ __doc__ = """
 import re
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 masterIds = [m.id for m in Glyphs.font.masters]
 

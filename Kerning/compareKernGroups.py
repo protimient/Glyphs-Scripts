@@ -6,7 +6,6 @@ Colours glyphs in font view according to their differences.
 
 import os
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
 
 if len(Glyphs.fonts) == 2:
     f1 = Glyphs.font
@@ -40,3 +39,5 @@ if len(Glyphs.fonts) == 2:
     ]
 
     print('\n'.join(message))
+
+Glyphs.showMacroWindow()

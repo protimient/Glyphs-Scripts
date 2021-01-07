@@ -5,7 +5,7 @@ Copies the entire kerning dictionary to the current font from the other opened f
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 if len(Glyphs.fonts) == 2:
     for fi, f in enumerate(Glyphs.fonts):

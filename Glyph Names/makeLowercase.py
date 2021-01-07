@@ -5,7 +5,7 @@ Makes the glyph names lowercase for the selected glyphs.
 """
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 Glyphs.font.disableUpdateInterface()
 

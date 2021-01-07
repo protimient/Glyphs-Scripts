@@ -8,7 +8,7 @@ import math
 
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 def notdefGlyph(this_font):

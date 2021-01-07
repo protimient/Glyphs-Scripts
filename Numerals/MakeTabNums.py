@@ -6,7 +6,7 @@ Adds missing and replaces existing tabular numerals and fits all tabular glyphs.
 
 from collections import defaultdict
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 linPropSuffix = ""

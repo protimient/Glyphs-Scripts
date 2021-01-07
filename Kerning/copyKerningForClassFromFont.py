@@ -7,7 +7,7 @@ Copies the kerning for the chosen class from the other open font.
 from vanilla import Window, Button, TextBox, PopUpButton, RadioGroup
 
 Glyphs.clearLog()
-Glyphs.showMacroWindow()
+# Glyphs.showMacroWindow()
 
 
 class copyKerning(object):
