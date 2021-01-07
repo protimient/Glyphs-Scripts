@@ -9,88 +9,88 @@ Glyphs.clearLog()
 
 def make_Toshi_frac(font):
     frac_code = """lookup FractionBar {
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures @figures slash;
-    ignore sub slash @figures @figures @figures slash';
-    ignore sub slash' @figures @figures @figures slash;
-    ignore sub slash @figures @figures slash';
-    ignore sub slash' @figures @figures slash;
-    ignore sub slash @figures slash';
-    ignore sub slash' @figures slash;
-    sub @figures slash' @figures by fraction;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures @figures slash;
+\tignore sub slash @figures @figures @figures slash';
+\tignore sub slash' @figures @figures @figures slash;
+\tignore sub slash @figures @figures slash';
+\tignore sub slash' @figures @figures slash;
+\tignore sub slash @figures slash';
+\tignore sub slash' @figures slash;
+\tsub @figures slash' @figures by fraction;
 } FractionBar;
 
 lookup Numerator1 {
-    sub @figures' fraction by @numr;
+\tsub @figures' fraction by @numr;
 } Numerator1;
 
 lookup Numerator2 {
-    sub @figures' @numr fraction by @numr;
+\tsub @figures' @numr fraction by @numr;
 } Numerator2;
 
 lookup Numerator3 {
-    sub @figures' @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr fraction by @numr;
 } Numerator3;
 
 lookup Numerator4 {
-    sub @figures' @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr fraction by @numr;
 } Numerator4;
 
 lookup Numerator5 {
-    sub @figures' @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr fraction by @numr;
 } Numerator5;
 
 lookup Numerator6 {
-    sub @figures' @numr @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator6;
 
 lookup Numerator7 {
-    sub @figures' @numr @numr @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator7;
 
 lookup Numerator8 {
-    sub @figures' @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator8;
 
 lookup Numerator9 {
-    sub @figures' @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator9;
 
 lookup Numerator10 {
-    sub @figures' @numr @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+\tsub @figures' @numr @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator10;
 
 lookup Denominator {
-    sub [fraction @dnom] @figures' by @dnom;
+\tsub [fraction @dnom] @figures' by @dnom;
 } Denominator;
 
 """
 
     space_frac_lookup = """lookup fraction_space {
-	sub @figures space' by space.frac;
+\tsub @figures space' by space.frac;
 } fraction_space;
 """
 
     # ot_classes = {
-    # 	'figures': 'zero one two three four five six seven eight nine',
-    # 	'numr': 'zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr',
-    # 	'dnom': 'zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom',
+    # \t'figures': 'zero one two three four five six seven eight nine',
+    # \t'numr': 'zero.numr one.numr two.numr three.numr four.numr five.numr six.numr seven.numr eight.numr nine.numr',
+    # \t'dnom': 'zero.dnom one.dnom two.dnom three.dnom four.dnom five.dnom six.dnom seven.dnom eight.dnom nine.dnom',
     # }
 
     if not font.glyphs['fraction']:
@@ -154,7 +154,7 @@ def fix_subs(font):
         old_tag = 'subs'
 
     elif 'subs' in feature_names and 'sinf' in feature_names:
-        subs = [x for x in features if x.name == 'subs'][0].code
+    \tubs = [x for x in features if x.name == 'subs'][0].code
         sinf = [x for x in features if x.name == 'sinf'][0].code
 
         if len(subs) > len(sinf):
@@ -326,30 +326,30 @@ def make_greek_case(font):
     calt_code = """
 
 lookup greek_dieresisCapInsertion {
-	sub [Alphatonos Epsilontonos Omicrontonos Upsilontonos] Iota' by Iotadieresis;
-	sub [Alphatonos Epsilontonos Etatonos Omicrontonos Omegatonos] Upsilon' by Upsilondieresis;
+\tsub [Alphatonos Epsilontonos Omicrontonos Upsilontonos] Iota' by Iotadieresis;
+\tsub [Alphatonos Epsilontonos Etatonos Omicrontonos Omegatonos] Upsilon' by Upsilondieresis;
 } greek_dieresisCapInsertion;
 
 lookup greek_tonosCap {
-	# tonos supression of single-letter word
-	sub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
-	sub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
-	sub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
-	sub @greekCapsTonos' @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
-	sub @greekCapsTonos' @NonLetter @greekCaps by @greekCapsTonosLess;
-	sub @greekCaps @NonLetter @NonLetter @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
-	sub @greekCaps @NonLetter @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
-	sub @greekCaps @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
-	sub @greekCaps @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
-	sub @greekCaps @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
-	# tonos supression within a word
-	sub @greekCaps @greekCapsTonos' by @greekCapsTonosLess;
-	sub @greekCapsTonos' @greekCaps by @greekCapsTonosLess;
+\t# tonos supression of single-letter word
+\tsub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
+\tsub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
+\tsub @greekCapsTonos' @NonLetter @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
+\tsub @greekCapsTonos' @NonLetter @NonLetter @greekCaps by @greekCapsTonosLess;
+\tsub @greekCapsTonos' @NonLetter @greekCaps by @greekCapsTonosLess;
+\tsub @greekCaps @NonLetter @NonLetter @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
+\tsub @greekCaps @NonLetter @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
+\tsub @greekCaps @NonLetter @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
+\tsub @greekCaps @NonLetter @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
+\tsub @greekCaps @NonLetter @greekCapsTonos' by @greekCapsTonosLess;
+\t# tonos supression within a word
+\tsub @greekCaps @greekCapsTonos' by @greekCapsTonosLess;
+\tsub @greekCapsTonos' @greekCaps by @greekCapsTonosLess;
 } greek_tonosCap;
 
 lookup greek_anoteleia {
-	ignore sub @greekAll periodcentered' @greekAll;
-	sub @greekAll periodcentered' by anoteleia;
+\tignore sub @greekAll periodcentered' @greekAll;
+\tsub @greekAll periodcentered' by anoteleia;
 } greek_anoteleia;
     """
 
