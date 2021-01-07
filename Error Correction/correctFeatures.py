@@ -37,47 +37,47 @@ def make_Toshi_frac(font):
 } FractionBar;
 
 lookup Numerator1 {
-\tsub @figures' fraction by @numr;
+    sub @figures' fraction by @numr;
 } Numerator1;
 
 lookup Numerator2 {
-\tsub @figures' @numr fraction by @numr;
+    sub @figures' @numr fraction by @numr;
 } Numerator2;
 
 lookup Numerator3 {
-\tsub @figures' @numr @numr fraction by @numr;
+    sub @figures' @numr @numr fraction by @numr;
 } Numerator3;
 
 lookup Numerator4 {
-\tsub @figures' @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr fraction by @numr;
 } Numerator4;
 
 lookup Numerator5 {
-\tsub @figures' @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr fraction by @numr;
 } Numerator5;
 
 lookup Numerator6 {
-\tsub @figures' @numr @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator6;
 
 lookup Numerator7 {
-\tsub @figures' @numr @numr @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator7;
 
 lookup Numerator8 {
-\tsub @figures' @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator8;
 
 lookup Numerator9 {
-\tsub @figures' @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator9;
 
 lookup Numerator10 {
-\tsub @figures' @numr @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
+    sub @figures' @numr @numr @numr @numr @numr @numr @numr @numr @numr fraction by @numr;
 } Numerator10;
 
 lookup Denominator {
-\tsub [fraction @dnom] @figures' by @dnom;
+    sub [fraction @dnom] @figures' by @dnom;
 } Denominator;
 
 """
@@ -154,7 +154,7 @@ def fix_subs(font):
         old_tag = 'subs'
 
     elif 'subs' in feature_names and 'sinf' in feature_names:
-    \tubs = [x for x in features if x.name == 'subs'][0].code
+        subs = [x for x in features if x.name == 'subs'][0].code
         sinf = [x for x in features if x.name == 'sinf'][0].code
 
         if len(subs) > len(sinf):
@@ -362,7 +362,7 @@ lookup greek_anoteleia {
         if smcp_feature is None:
             smcp_feature = GSFeature('smcp')
             font.features.append(smcp_feature)
-        
+
         smcp_feature.automatic = False
         smcp_greek_code = """sub [alphatonos.sc epsilontonos.sc omicrontonos.sc upsilontonos.sc] iota.sc' by iotadieresis.sc;
 sub [alphatonos.sc epsilontonos.sc etatonos.sc omicrontonos.sc omegatonos.sc] upsilon.sc' by upsilondieresis.sc;
