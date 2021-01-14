@@ -105,13 +105,11 @@ numeral_suffixes = [
 
 
 def get_subcategory(g):
-    suffix = ''
+    suffix = g.name.partition('.')
     g_subCategory = g.subCategory
 
-    for x in numeral_suffixes:
-        if g.name.endswith(x):
-            g_subCategory = 'Decimal Digit'
-            suffix = x
+    if suffix in numeral_suffixes:
+        g_subCategory = 'Decimal Digit'
 
     if g.category == 'Symbol' and g.subCategory == 'Math':
         g_subCategory = 'Decimal Digit'
