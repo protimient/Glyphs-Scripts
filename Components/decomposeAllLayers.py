@@ -11,6 +11,7 @@ Glyphs.font.disableUpdateInterface()  # suppresses UI updates in Font View
 for selected_l in Glyphs.font.selectedLayers:
     g = selected_l.parent
     selected_component_names = [c.name for c in selected_l.components if c.selected]
+    g.beginUndo()
 
     for l in g.layers:
         selected_components = []
@@ -23,5 +24,6 @@ for selected_l in Glyphs.font.selectedLayers:
         for c in selected_components:
             c.decompose()
 
+    g.endUndo()
 
 Glyphs.font.enableUpdateInterface()  # re-enables UI updates in Font View
