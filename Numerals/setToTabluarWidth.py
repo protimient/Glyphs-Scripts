@@ -32,7 +32,13 @@ tabularWidths = _tabularWidths()
 thisFont.disableUpdateInterface()  # suppresses UI updates in Font View
 
 for g in selectedGlyphs:
+    g.leftMetricsKey = None
+    g.rightMetricsKey = None
+    g.widthMetricsKey = None
     for l in g.layers:
+        l.leftMetricsKey = None
+        l.rightMetricsKey = None
+        l.widthMetricsKey = None
         for thisComp in l.components:
             thisComp.automaticAlignment = False
             addToSides = (tabularWidths[l.associatedMasterId] - l.width) / 2
