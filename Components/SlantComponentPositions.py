@@ -7,7 +7,7 @@ Moves the components to the position they would be in if slanted, without actual
 
 import os
 import math
-from vanilla import TextBox, Button, EditText, Window
+from vanilla import TextBox, Button, EditText, Window, CheckBox
 
 Glyphs.clearLog()
 # Glyphs.showMacroWindow()
@@ -30,7 +30,9 @@ class replaceNamedComponent:
         self.w.slant_angle_text = TextBox((margin, next_y + 2, col_1_width, item_height), "Slant Angle:", sizeStyle='regular')
         next_y += item_height
         self.w.slant_angle = EditText((margin, next_y, col_1_width, item_height), self.prefs.get('slant_angle', ''))
+        next_y += item_height + margin
 
+        self.w.slant_all_layers = CheckBox((margin, next_y, col_1_width, item_height), "Slant All Layers", value=bool(self.prefs.get('slant_all_layers')), sizeStyle='regular')
         next_y += item_height + margin
 
         self.w.makeitso = Button((w_width / 4.0, next_y, col_1_width / 2.0, item_height), 'Slant Components', callback=self.makeitso)
@@ -84,7 +86,7 @@ class replaceNamedComponent:
 
     def makeitso(self, sender):
         self.w.close()
-
+        slant_all_layers = self.w.slant_all_layers.get()
         try:
             slant_angle = float(self.w.slant_angle.get())
         except TypeError:
@@ -92,20 +94,27 @@ class replaceNamedComponent:
             return
 
         self.set_prefs(slant_angle=slant_angle)
+        self.set_prefs(slant_all_layers=slant_all_layers)
 
         if not Glyphs.font.selectedLayers:
             return
+        
+        for sl in Glyphs.font.selectedLayers:
+            if slant_all_layers:
+                layers = [l for l in sl.parent.layers]
+            else:
+                layers = [sl]
 
-        for l in Glyphs.font.selectedLayers:
-            comps = [c for c in l.components if c.selected] or [c for c in l.components]
-            if not comps:
-                Glyphs.showNotification('Slant Component Positions', 'You haven\'t selected any Components!')
-                return
+            for l in layers:
+                comps = [c for c in l.components if c.selected] or [c for c in l.components]
+                if not comps:
+                    Glyphs.showNotification('Slant Component Positions', 'You haven\'t selected any Components!')
+                    return
 
-            reference_point = self.get_reference_point(comps, l)
-            for c in comps:
-                x_shift = math.tan(math.radians(slant_angle)) * (self.get_obj_center(c).y - reference_point.y)
-                c.position = NSPoint(c.position.x + x_shift, c.position.y)
+                reference_point = self.get_reference_point(comps, l)
+                for c in comps:
+                    x_shift = math.tan(math.radians(slant_angle)) * (self.get_obj_center(c).y - reference_point.y)
+                    c.position = NSPoint(c.position.x + x_shift, c.position.y)
 
 
 replaceNamedComponent()
