@@ -68,8 +68,9 @@ def centre_vertically_on_capheight(l):
 
 
 def move_above_capheight(l):
-    l_centre = l.bounds.origin.y + (l.bounds.size.height / 2)
-    offset = Glyphs.font.masters[l.associatedMasterId].capHeight - l_centre
+    # l_centre = l.bounds.origin.y + (l.bounds.size.height / 2)
+    # offset = Glyphs.font.masters[l.associatedMasterId].capHeight - l_centre
+    offset = Glyphs.font.masters[l.associatedMasterId].capHeight - Glyphs.font.masters[l.associatedMasterId].xHeight
     l.applyTransform((1, 0, 0, 1, 0, offset))
     print(offset)
 
@@ -78,7 +79,9 @@ Glyphs.font.disableUpdateInterface()
 for sl in Glyphs.font.selectedLayers:
     g = sl.parent
     new_g = duplicateAsComponents(g, glyph_name=g.name + '.case', replace_extant=True, copy_anchors=g.category == 'Mark')
-    if g.category != 'Mark':
-        for l in new_g.layers:
+    for l in new_g.layers:
+        if g.category != 'Mark':
             centre_vertically_on_capheight(l)
+        else:
+            move_above_capheight(l)
 Glyphs.font.enableUpdateInterface()
