@@ -6,14 +6,13 @@ Open tab containing Kerning strings for the selected glyphs.
 
 import os
 import copy
-from collections import defaultdict, OrderedDict
+from collections import OrderedDict
 
 from vanilla import (
     Window,
     TextBox,
     RadioGroup,
     Button,
-    CheckBox,
     PopUpButton,
     EditText,
 )
@@ -122,7 +121,7 @@ class makeDisplay(object):
         layer_value = float(self.w.layer_value.get().strip())
         if int(layer_value) - layer_value == 0:
             layer_value = int(layer_value)
-        
+
         self.set_prefs(
             parent_layers=parent_layers,
             brace_or_bracket=brace_or_bracket,
@@ -136,7 +135,7 @@ class makeDisplay(object):
 
         for sl in Glyphs.font.selectedLayers:
             g = sl.parent
-                
+
             for m in masters:
                 newL = copy.copy(g.layers[m.id])
                 newL.layerId = None
