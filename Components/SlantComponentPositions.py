@@ -18,7 +18,7 @@ class replaceNamedComponent:
         item_height = 24.0
         margin = 10
         w_width = 350.0
-        w_height = (item_height * 4) + margin
+        w_height = (item_height * 5) + margin
         next_y = margin
         col_1_width = w_width - (margin * 2)
         item_height = 24
@@ -32,7 +32,7 @@ class replaceNamedComponent:
         self.w.slant_angle = EditText((margin, next_y, col_1_width, item_height), self.prefs.get('slant_angle', ''))
         next_y += item_height + margin
 
-        self.w.slant_all_layers = CheckBox((margin, next_y, col_1_width, item_height), "Slant All Layers", value=bool(self.prefs.get('slant_all_layers')), sizeStyle='regular')
+        self.w.slant_all_layers = CheckBox((margin, next_y, col_1_width, item_height), "Slant All Layers", value=int(self.prefs.get('slant_all_layers')), sizeStyle='regular')
         next_y += item_height + margin
 
         self.w.makeitso = Button((w_width / 4.0, next_y, col_1_width / 2.0, item_height), 'Slant Components', callback=self.makeitso)
@@ -87,14 +87,17 @@ class replaceNamedComponent:
     def makeitso(self, sender):
         self.w.close()
         slant_all_layers = self.w.slant_all_layers.get()
+        # print(slant_all_layers, type(slant_all_layers))
         try:
             slant_angle = float(self.w.slant_angle.get())
         except TypeError:
             Glyphs.showNotification('Slant Component Positions', 'The slant angle was not a number!')
             return
 
-        self.set_prefs(slant_angle=slant_angle)
-        self.set_prefs(slant_all_layers=slant_all_layers)
+        self.set_prefs(
+            slant_angle=slant_angle,
+            slant_all_layers=slant_all_layers
+            )
 
         if not Glyphs.font.selectedLayers:
             return
