@@ -158,7 +158,7 @@ class makePlist(object):
 
         glyph_names = [l.parent.name for l in Glyphs.font.selectedLayers]
 
-        this_charset = self.charsets.get(charset_name) or self.charset
+        this_charset = self.charsets.get(charset_name) or self.charset()
         this_charset.name = charset_name
         this_charset.glyph_names = glyph_names
         self.charsets[charset_name] = this_charset
