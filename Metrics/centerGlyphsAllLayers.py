@@ -11,12 +11,12 @@ selectedGlyphs = [g.parent for g in selectedLayers]
 thisFont.disableUpdateInterface()
 
 for thisGlyph in selectedGlyphs:
+    thisGlyph.beginUndo()
     for thisLayer in thisGlyph.layers:
-        thisGlyph.beginUndo()
         oldWidth = thisLayer.width
         thisLayer.LSB = (thisLayer.LSB + thisLayer.RSB) // 2
         thisLayer.width = oldWidth
-        thisGlyph.endUndo()
+    thisGlyph.endUndo()
 
 thisFont.enableUpdateInterface()
 print("Centered: {}".format(", ".join([l.parent.name for l in selectedLayers])))
