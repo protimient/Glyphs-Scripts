@@ -13,14 +13,13 @@ layers_in_tab = Glyphs.font.currentTab.layers
 
 new_layers = []
 non_layers = []
+all_layers = []
 for l in layers_in_tab:
-    new_l = l.parent.layers[layer_name]
-    if new_l:
-        new_layers.append(new_l)
-    else:
-        non_layers.append(l)
-    # for l in l.parent.layers:
-    #     if l.name == layer_name:
-    #         new_layers.append(l)
+    all_layers.append(l.parent.layers[layer_name] or l)
+    # if new_l:
+    #     new_layers.append(new_l)
+    # else:
+    #     non_layers.append(l)
 
-Glyphs.font.currentTab.layers = new_layers + [GSControlLayer(10)] + non_layers
+# Glyphs.font.currentTab.layers = new_layers + [GSControlLayer(10)] + non_layers
+Glyphs.font.currentTab.layers = all_layers
