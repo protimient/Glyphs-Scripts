@@ -1,4 +1,4 @@
-# MenuTitle: Rename Kern Group
+# MenuTitle: Rename Kern Group...
 
 import re
 from vanilla import Window, Button, TextBox, PopUpButton, EditText
