@@ -4,20 +4,38 @@ __doc__ = """
 Deletes whatever is selected in all other layers.
 """
 
-# Glyphs.clearLog()
+Glyphs.clearLog()
 # Glyphs.showMacroWindow()
 
 l = Glyphs.font.selectedLayers[0]
 g = l.parent
+
+
+def delete_component(c, target_l, c_index=None):
+    c_names = [c.name for c in target_l.components]
+    if c_names.count(c.name) == 1:
+        del target_l.components[c_names.index(c.name)]
+    elif c_names.count(c.name) > 1 and c_index is not None:
+        if target_l.components[c_index].name == c.name:
+            del target_l.components[c_index]
+        else:
+            for ci, c2 in enumerate(target_l.components):
+                if c2.name == c.name:
+                    del target_l.components[ci]
+
+
 for o in l.selection:
+    if type(o) == GSComponent:
+        ci = [x for x in l.components].index(o)
+    else:
+        ci = None
+
     for l2 in g.layers:
         if type(o) == GSAnchor:
             del l2.anchors[o.name]
 
         if type(o) == GSComponent:
-            for ci, c in enumerate(l2.components):
-                if c.name == o.name:
-                    del l2.components[ci]
+            delete_component(o, l2, c_index=ci)
 
         if type(o) == GSHint:
             for hi, h in enumerate(l2.hints):
