@@ -27,7 +27,7 @@ if len(Glyphs.fonts) == 2:
 
         try:
             l2 = g2.layers[m2]
-        except KeyError:
+        except (AttributeError, KeyError):
             print('"{0}" is not in {1}'.format(g1.name, f2))
             continue
 
