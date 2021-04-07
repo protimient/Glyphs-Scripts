@@ -1,6 +1,6 @@
 # MenuTitle: Report Unencoded, Unfeatured glyphs
 
-# Glyphs.clearLog()
+Glyphs.clearLog()
 # Glyphs.showMacroWindow()
 
 
@@ -79,7 +79,8 @@ def get_unencoded_unfeatured():
 
 affected_glyphs = get_unencoded_unfeatured()
 if affected_glyphs:
-    string = '  '.join(['/' + g.name for g in affected_glyphs])
+    string = ''.join(['/' + g.name for g in affected_glyphs])
+    print('\n'.join([g.name for g in affected_glyphs]))
     Glyphs.font.newTab(string)
 else:
     Glyphs.showNotification('UnEncoded/Unfeatured', 'All good. All unencoded glyphs are included in OpenType features.')
