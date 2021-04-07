@@ -14,7 +14,7 @@ for g in [x.parent for x in Glyphs.font.selectedLayers]:
         strings.append('/{0}  '.format(g.name))
     else:
         for l in g.layers:
-            if l.leftMetricsKey() or l.rightMetricsKey():
+            if l.leftMetricsKey or l.rightMetricsKey:
                 strings.append('/{0}  '.format(g.name))
 
 
