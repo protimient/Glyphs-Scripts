@@ -11,16 +11,16 @@ l = Glyphs.font.selectedLayers[0]
 g = l.parent
 
 
-def delete_component(c, target_l, c_index=None):
+def delete_component(source_component, target_l, c_index=None):
     c_names = [c.name for c in target_l.components]
-    if c_names.count(c.name) == 1:
-        del target_l.components[c_names.index(c.name)]
-    elif c_names.count(c.name) > 1 and c_index is not None:
-        if target_l.components[c_index].name == c.name:
+    if c_names.count(source_component.name) == 1:
+        del target_l.components[c_names.index(source_component.name)]
+    elif c_names.count(source_component.name) > 1 and c_index is not None:
+        if target_l.components[c_index].name == source_component.name:
             del target_l.components[c_index]
         else:
             for ci, c2 in enumerate(target_l.components):
-                if c2.name == c.name:
+                if c2.name == source_component.name:
                     del target_l.components[ci]
 
 
