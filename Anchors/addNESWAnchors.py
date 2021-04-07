@@ -4,7 +4,8 @@ __doc__ = """
 Adds all compass point anchors TopLeft, Top, TopRight, Right, BottomRight, Bottom, BottomLeft, Left
 """
 
-anchor_name = '_#stem'
+# anchor_name = '_#stem'
+anchor_name = ''
 
 
 def get_anchors(xMin, yMin, xMax, yMax, anchor_name=''):
@@ -26,14 +27,14 @@ def get_anchors(xMin, yMin, xMax, yMax, anchor_name=''):
     bottom_right = NSPoint(right, bottom)
 
     return [
-        GSAnchor('{}topleft'.format(anchor_name), top_left),
+        GSAnchor('{}topleft'.format(anchor_name or '#'), top_left),
         GSAnchor('{}top'.format(anchor_name), top_center),
-        GSAnchor('{}topright'.format(anchor_name), top_right),
-        GSAnchor('{}right'.format(anchor_name), middle_right),
-        GSAnchor('{}bottomright'.format(anchor_name), bottom_right),
+        GSAnchor('{}topright'.format(anchor_name or '#'), top_right),
+        GSAnchor('{}right'.format(anchor_name or '#'), middle_right),
+        GSAnchor('{}bottomright'.format(anchor_name or '#'), bottom_right),
         GSAnchor('{}bottom'.format(anchor_name), bottom_center),
-        GSAnchor('{}bottomleft'.format(anchor_name), bottom_left),
-        GSAnchor('{}left'.format(anchor_name), middle_left),
+        GSAnchor('{}bottomleft'.format(anchor_name or '#'), bottom_left),
+        GSAnchor('{}left'.format(anchor_name or '#'), middle_left),
     ]
 
 
