@@ -22,6 +22,13 @@ if len(Glyphs.fonts) == 2:
         l1 = f1.selectedFontMaster.id
         l2 = f2.selectedFontMaster.id
 
+        a1_names = [a.name for a in g1.layers[l1].anchors]
+        a2_names = [a.name for a in g2.layers[l2].anchors]
+        if a1_names != a2_names:
+            g1.setColorIndex_(1)
+            g2.setColorIndex_(1)
+            continue
+
         a1 = [(a.name, a.x, a.y) for a in g1.layers[l1].anchors]
         a2 = [(a.name, a.x, a.y) for a in g2.layers[l2].anchors]
         if a1 != a2:
