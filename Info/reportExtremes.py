@@ -38,7 +38,12 @@ for m in Glyphs.font.masters:
 def convert_text_to_layers(string):
     current_master_id = Glyphs.font.selectedFontMaster.id
     glyphs = list(string)
-    layers = [Glyphs.font.glyphs[x].layers[current_master_id] for x in glyphs]
+    layers = []
+    for gn in glyphs:
+        g = Glyphs.font.glyphs[gn]
+        if g is not None:
+            layers.append(g.layers[current_master_id])
+        
     return layers
 
 
