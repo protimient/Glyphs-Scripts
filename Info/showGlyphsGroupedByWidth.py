@@ -9,7 +9,7 @@ for l in Glyphs.font.selectedLayers:
 string = 'Total Widths: {0}\n\n'.format(len(widths))
 for width in sorted(widths.keys()):
     x = widths[width]
-    string += '{0}: {1}\n'.format(width, '  '.join(x))
+    string += '{0}: {1}\n'.format(width, ''.join(x))
 
 if string:
     Glyphs.font.newTab(string)
