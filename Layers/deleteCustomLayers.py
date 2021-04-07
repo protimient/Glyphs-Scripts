@@ -16,13 +16,16 @@ for g in Glyphs.font.glyphs:
 
     deletables = []
     for l in g.layers:
-        isBracketLeyer = bool(re.search(r'\[|\]|\{|\}', l.name))
+        if l.name is None:
+            isBracketLeyer = False
+        else:
+            isBracketLeyer = bool(re.search(r'\[|\]|\{|\}', l.name))
 
         if l.layerId not in masterIds and not isBracketLeyer:
             deletables.append(l.layerId)
 
     if deletables:
-        print(g.name)
+        print('\n', g.name)
     for lid in deletables:
         print(g.layers[lid].name)
         del g.layers[lid]
