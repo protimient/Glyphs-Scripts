@@ -30,7 +30,7 @@ for m in Glyphs.font.masters:
             extremes[m.id]['xMax_val'] = l.bounds.origin.x + l.bounds.size.width
             extremes[m.id]['xMax_layer'] = l
 
-        if extremes[m.id]['yMax_val'] is None or extremes[m.id]['yMax_val'] < l.bounds.origin.x + l.bounds.size.height:
+        if extremes[m.id]['yMax_val'] is None or extremes[m.id]['yMax_val'] < l.bounds.origin.y + l.bounds.size.height:
             extremes[m.id]['yMax_val'] = l.bounds.origin.x + l.bounds.size.height
             extremes[m.id]['yMax_layer'] = l
 
