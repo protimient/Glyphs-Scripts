@@ -1,8 +1,16 @@
 # MenuTitle: Report xMin xMax yMin yMax
 from collections import OrderedDict
+from AppKit import NSEvent
+
 Glyphs.clearLog()
 
 extremes = OrderedDict()
+
+# --- From mekkablue ---
+keysPressed = NSEvent.modifierFlags()
+shiftKey = 131072
+shiftKeyPressed = keysPressed & shiftKey == shiftKey
+# ---
 
 for m in Glyphs.font.masters:
     extremes[m.id] = {
@@ -18,6 +26,8 @@ for m in Glyphs.font.masters:
 
     for g in [x for x in Glyphs.font.glyphs if x.export]:
         l = g.layers[m.id]
+        if shiftKeyPressed and not l.width:
+            continue
         if extremes[m.id]['xMin_val'] is None or extremes[m.id]['xMin_val'] > l.bounds.origin.x:
             extremes[m.id]['xMin_val'] = l.bounds.origin.x
             extremes[m.id]['xMin_layer'] = l
