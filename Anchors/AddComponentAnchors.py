@@ -4,10 +4,17 @@ __doc__ = """
 Adds the anchors from all the components to all the layers in the current glyph.
 """
 
+from AppKit import NSEvent
+
 # Glyphs.clearLog()
 # Glyphs.showMacroWindow()
 
-keep_existing = False
+# --- From mekkablue ---
+keysPressed = NSEvent.modifierFlags()
+shiftKey = 131072
+shiftKeyPressed = keysPressed & shiftKey == shiftKey
+# ---
+keep_existing = shiftKeyPressed
 
 
 def get_component_anchors(layer, anchor_dict):
