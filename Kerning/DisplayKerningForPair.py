@@ -9,10 +9,17 @@ from itertools import product
 # Glyphs.clearLog()
 # Glyphs.showMacroWindow()
 
+
+def get_current_glyphs():
+    g1 = Glyphs.font.currentTab.layers[Glyphs.font.currentTab.layersCursor - 1].parent
+    g2 = Glyphs.font.currentTab.layers[Glyphs.font.currentTab.layersCursor].parent
+    return g1, g2
+
+
 try:
     g1, g2 = [g.parent for g in Glyphs.font.selectedLayers]
 except ValueError:
-    g1, g2 = None, None
+    g1, g2 = get_current_glyphs()
 
 if g1 and g2:
     leftGroup = g1.rightKerningGroup
