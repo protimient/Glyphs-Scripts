@@ -11,8 +11,8 @@ import copy
 
 Glyphs.font.disableUpdateInterface()
 
-for g in [x.parent for x in Glyphs.font.selectedLayers]:
-    for l in g.layers:
+for sl in Glyphs.font.selectedLayers:
+    for l in sl.parent.layers:
         l.background = copy.copy(l)
 
 Glyphs.font.enableUpdateInterface()
