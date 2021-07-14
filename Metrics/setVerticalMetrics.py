@@ -13,7 +13,7 @@ class setVerticalMetrics:
 
     def get_extremes(self, master):
         extremes = defaultdict(list)
-        for g in [x for x in Glyphs.font.glyphs if x.export]:
+        for g in [x for x in Glyphs.font.glyphs if x.export and x.layers[master.id].width]:
             extremes['xMin'].append(g.layers[master.id].bounds.origin.x)
             extremes['xMax'].append(g.layers[master.id].bounds.origin.x + g.layers[master.id].bounds.size.width)
             extremes['yMin'].append(g.layers[master.id].bounds.origin.y)
