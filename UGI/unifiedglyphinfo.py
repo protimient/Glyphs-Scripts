@@ -1,7 +1,16 @@
 # from collections import defaultdict
 import math
-from Foundation import NSPoint
-from GlyphsApp import Glyphs
+try:
+    from Foundation import NSPoint
+except ImportError:
+    class NSPoint:
+        x = 0
+        y = 0
+
+try:
+    from GlyphsApp import Glyphs
+except ImportError:
+    Glyphs = None
 
 
 class xpos:
