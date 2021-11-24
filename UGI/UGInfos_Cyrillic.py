@@ -1539,7 +1539,7 @@ x.addRecipe('three.osf decompose')
 x.addRecipe('three decompose')
 x.addAnchor('bottom', position_x=xpos.apex_bottom, position_y='ypos.outline_bottom')
 x.addKerning(left='ze-cy.loclBGR', right='ze-cy.loclBGR')  # 'ze-cy.loclBGR',
-x.addBuildString('/ze-cy/ze-cy.loclBGR')
+x.addBuildString('За/pe-cy.loclBGR а/ze-cy.loclBGR ва')  # Запазва За/pecyr.loclBGR а/zecyr.loclBGR ва
 
 x = ugi('zedescender-cy')
 x.addRecipe('ze-cy', '_part.toothcentered-cy')
