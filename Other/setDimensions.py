@@ -3,6 +3,7 @@
 __doc__ = """
 Sets the Latin values for each master in the Dimesions pallette in the top right.
 """
+from Foundation import NSPoint
 
 Glyphs.clearLog()
 # Glyphs.showMacroWindow()

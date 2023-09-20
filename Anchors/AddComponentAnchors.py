@@ -5,9 +5,9 @@ Adds the anchors from all the components to all the layers in the current glyph.
 """
 
 from AppKit import NSEvent
-
-# Glyphs.clearLog()
-# Glyphs.showMacroWindow()
+from Foundation import NSPoint
+Glyphs.clearLog()
+Glyphs.showMacroWindow()
 
 # --- From mekkablue ---
 keysPressed = NSEvent.modifierFlags()

@@ -55,6 +55,8 @@ if ugi:
     build_string = ugi.build_string
 
 if build_string is None:
+    rbs = None
+    lbs = None
     if g.subCategory == 'Smallcaps':
         rbs = glyph_exists(make_sc_2_uc_name(g.name))
         lbs = glyph_exists(g.name.replace('.sc', ''))
@@ -76,7 +78,7 @@ if build_string is None:
         if default_build_string:
             build_string = default_build_string.format(g.name)
 
-build_string = build_string.decode('utf-8')
+# build_string = build_string.decode('utf-8')
 
 if Glyphs.font.currentTab:
     Glyphs.font.currentTab.text = build_string

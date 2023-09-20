@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from unifiedglyphinfo import CollectedGlyphInfos, xpos, ypos
+from .unifiedglyphinfo import CollectedGlyphInfos, xpos, ypos
 
 
 def collect_infos(infos_dict):

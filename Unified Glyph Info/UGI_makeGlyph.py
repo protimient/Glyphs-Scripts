@@ -135,7 +135,9 @@ class makeGlyphChooser(object):
             if abs(this_rotation) == 90:
                 this_scale_x, this_scale_y = (this_scale_y, this_scale_x)
 
-            new_comp.setScaleX_scaleY_rotation_(this_scale_x, this_scale_y, this_rotation)
+            # new_comp.setScaleX_scaleY_rotation_(this_scale_x, this_scale_y, this_rotation)
+            new_comp.scale = (this_scale_x, this_scale_y)
+            new_comp.rotation = this_rotation
 
             offset_x = parent_layer.bounds.origin.x - new_comp.bounds.origin.x
             offset_y = parent_layer.bounds.origin.y - new_comp.bounds.origin.y
@@ -166,7 +168,7 @@ class makeGlyphChooser(object):
 
             if ingredient.decompose:
                 try:
-                    l.components[-1].decompose()
+                    list(l.components)[-1].decompose()
                 except Exception as e:
                     print(e)
 

@@ -4,6 +4,7 @@
 import math
 import re
 from collections import defaultdict
+from Foundation import NSPoint
 
 __doc__ = """
 Adds missing anchors to the selected glyphs on all layers.

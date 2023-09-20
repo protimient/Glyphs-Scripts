@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from unifiedglyphinfo import CollectedGlyphInfos, xpos, ypos
+from .unifiedglyphinfo import CollectedGlyphInfos, xpos, ypos
 
 
 def collect_infos(infos_dict):
@@ -761,6 +761,7 @@ x.addMetrics(left='emphasis-arm', right='emphasis-arm')  # comma-arm
 
 x = ugi('dram-arm')
 x.addRecipe('Da-arm decompose')  # dram-arm
+x.addBuildString('/yen/liraturkish/Euro/dram-arm/Ben-arm')
 
 x = ugi('emphasis-arm')
 x.addRecipe('acute decompose')  # emphasis-arm
