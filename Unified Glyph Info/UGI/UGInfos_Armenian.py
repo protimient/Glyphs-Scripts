@@ -9,7 +9,7 @@ def collect_infos(infos_dict):
 
 ugi = CollectedGlyphInfos()
 x = ugi('Ayb-arm')
-x.addAnchor('top', position_x=xpos.outline_center, position_y=ypos.capHeight)  # 'Ayb-arm'
+x.addAnchor('top', position_x=xpos.outline_center, position_y=ypos.capHeight)  # Ayb-arm
 x.addMetrics(left='Seh-arm', right='Ayb-arm')  # Ayb-arm
 x.addKerning(left='Seh-arm', right='Ayb-arm')  # Ayb-arm
 x.addRecipe('Seh-arm', 'eh-arm decompose')  # Ayb-arm
